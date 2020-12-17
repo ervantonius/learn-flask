@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello Flask</title>
+</head>
+<body>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for message in messages %}
+				{{ message }}
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+
+	<hr>
+
+	<h1>Halaman Profile {{ name }}</h1>
+	<br>
+	<a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
